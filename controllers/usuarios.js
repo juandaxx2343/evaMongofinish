@@ -40,7 +40,7 @@ const putUsuario = async (req, res) => {
     const { documentoAnterior, documento, apellidos, nacimiento, nacionalidad, goles, estado } = req.body
     console.log(req.body)
     
-    await  Usuario.findOneAndUpdate({documento: documentoAnterior}, {apellidos:apellidos, nacimiento: nacimiento, nacionalidad: nacionalidad, goles: goles, estado:estado}) 
+    await  Usuario.findOneAndUpdate({documento: documentoAnterior}, {documento: documento, apellidos:apellidos, nacimiento: nacimiento, nacionalidad: nacionalidad, goles: goles, estado:estado}) 
     const usuario = await Usuario.find({documento: documento })
     res.json({  
         msg: "Jugador modificado Correctamente",
